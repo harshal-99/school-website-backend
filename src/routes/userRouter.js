@@ -60,7 +60,7 @@ userRouter.post('/login',
 
 		response
 			.status(200)
-			.send({token, username: user.username, id: user.id})
+			.send({token, username: user.username, id: user.id, isAdmin: user.isAdmin})
 	})
 
 
