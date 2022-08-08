@@ -19,7 +19,7 @@ photoRouter.post('/',
 	tokenExtractor,
 	tokenValidator,
 	body('title').escape().isString().trim(),
-	body('url').escape().isString().trim(),
+	body('url').isString().trim().isURL(),
 	async (request, response, next) => {
 		const errors = validationResult(request)
 		if (!errors.isEmpty()) {
